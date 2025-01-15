@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{B23EF6DB-EEE
 		namespace.yml = namespace.yml
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "UserManagement.tests", "UserManagement.tests\UserManagement.tests.fsproj", "{EF97B0AA-5BF6-4F57-8CF1-A90283DAFB9D}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "UserManagement.tests", "src\UserManagement.Tests\UserManagement.Tests.csproj", "{EF97B0AA-5BF6-4F57-8CF1-A90283DAFB9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
