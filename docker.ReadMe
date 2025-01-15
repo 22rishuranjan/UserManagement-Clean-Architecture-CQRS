@@ -1,0 +1,23 @@
+
+1. Initialize Swarm mode (if not already done):
+docker swarm init
+
+2. Deploy the stack
+docker stack deploy -c docker-compose.yml my-stack
+
+3. Verify the services
+docker service ls
+
+
+4. Inspect the replicas and logs if needed
+
+docker service ps my-stack_dotnet-api
+docker service logs my-stack_dotnet-api
+
+
+1. dotnet-api Service
+This service represents the backend API built with .NET Core (or .NET). Its primary role is to handle business logic, 
+communicate with databases, and provide data to the frontend or other clients.
+
+2. my-app Service
+This service represents a frontend application or another dependent service that interacts with the dotnet-api.

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usermanagement-dotnet-api
+  labels:
+    app: usermanagement-dotnet-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: usermanagement-dotnet-api
+  template:
+    metadata:
+      labels:
+        app: usermanagement-dotnet-api
+    spec:
+      containers:
+      - name: usermanagement-dotnet-api
+        image: acrfordeployment.azurecr.io/usermanagement-dotnet-api:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Production"
+        - name: ConnectionStrings__SqlDb
+          value: "Server=<Azure-SQL-Server-Connection>;Database=<Database-Name>;User Id=<User>;Password=<Password>"
+        - name: ConnectionStrings__Redis
+          value: "<Azure-Redis-Connection>"
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
